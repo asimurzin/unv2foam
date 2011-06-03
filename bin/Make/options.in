@@ -1,0 +1,8 @@
+EXE_INC = \
+    -D__FOAM_VERSION__=@FOAM_VERSION@ \
+    -I$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude \
+    -I@abs_top_builddir@/lib
+
+
+EXE_LIBS = \
+    -L@abs_top_builddir@/lib -lunv2foam

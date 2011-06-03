@@ -1,0 +1,10 @@
+EXE_INC = \
+    -D__FOAM_VERSION__=@FOAM_VERSION@ \
+    -I$(WM_PROJECT_DIR)/src/meshTools/lnInclude \
+    -I$(WM_PROJECT_DIR)/src/triSurface/lnInclude \
+    -I$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude
+
+
+LIB_LIBS = \
+    -L$(WM_PROJECT_DIR)/lib/$(WM_OPTIONS) -lmeshTools -ltriSurface -lfiniteVolume -lOpenFOAM
+

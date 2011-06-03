@@ -1,0 +1,96 @@
+#--------------------------------------------------------------------------------------
+Installation Instructions
+#--------------------------------------------------------------------------------------
+
+Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/unv2foam
+
+
+#--------------------------------------------------------------------------------------
+Pre-requisites
+#--------------------------------------------------------------------------------------
+
+"unv2foam" is derived from correponding OpenFOAM "ideasUnvToFoam" utility
+It advances the referenced OpenFOAM "ideasUnvToFoam" utility in two main terms:
+ - introduces embedded capabilties (its functionality can be called as usual C++ function)
+ - makes this functionality available for different versions of OpenFOAM
+
+* Install OpenFOAM (tested with versions 1.4.1-dev, 1.5 or 1.6)
+Please follow instructions from corresponding INSTALL file to setup OpenFOAM
+on your computer.
+
+* Install conffoam (common purpose configuration utility) 
+Please follow instructions from corresponding INSTALL file to setup OpenFOAM
+on your computer.
+
+Then follow below instructions in order to build the "unv2foam" utilitity.
+
+
+#--------------------------------------------------------------------------------------
+Basic Installation
+#--------------------------------------------------------------------------------------
+
+The build procedure of the "unv2foam" utitlity is based on GNU autoconf and make utility. 
+In order to build the module you have to perform the following actions:
+
+1. Go to the source directory:
+
+   cd <path to the sources>
+
+2. Modify the provided "env.sh" file to adjust to your local environment.
+
+   <your favorite editor> ./env.sh
+
+3. Source this "env.sh" file to define corresponding build environment.
+
+   source ./env.sh
+
+4. Configuring the "unv2foam" build system:
+
+   build_configure
+   ./configure
+
+   Make sure that after each configuration step "--- OK ---" message is
+   printed in your console.
+
+   To see all applicable configuration options run "./configure --help"
+
+5. Build "unv2foam" utitlity:
+
+   ./Allwmake
+
+  (use "./wcleanAll" command to cleanup the build folder)
+
+
+#--------------------------------------------------------------------------------------
+"unv2foam" utility environment
+#--------------------------------------------------------------------------------------
+
+Before using "unv2foam" it is necessary to source the generated "bashrc" file
+
+
+#--------------------------------------------------------------------------------------
+"unv2foam" utility installation check
+#--------------------------------------------------------------------------------------
+
+Run the compiled command-line utility on some existing UNV file
+
+  unv2foam <.unv file>
+
+
+#--------------------------------------------------------------------------------------
+

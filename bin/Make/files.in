@@ -1,0 +1,4 @@
+command.C
+
+SEXE = @abs_top_builddir@/bin/unv2foam
+
