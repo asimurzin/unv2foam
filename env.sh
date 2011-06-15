@@ -24,8 +24,6 @@ source /usr/local/share/confFlu/bashrc
 
 
 #---------------------------------------------------------------------------
-which_open_foam="1.6"
-
 #source_openfoam /home/andrey/OpenFOAM/OpenFOAM-1.6/etc/bashrc
 
 source_openfoam /opt/openfoam171/etc/bashrc
