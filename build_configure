@@ -1,3 +1,7 @@
+#!/bin/sh
+
+#--------------------------------------------------------------------------------------
+## Copyright (C) 2010- Alexey Petrov
 ## Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
 ## 
 ## This program is free software: you can redistribute it and/or modify
@@ -13,24 +17,29 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ## 
-## See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/unv2foam
+## See http://sourceforge.net/projects/pythonflu
 ##
 ## Author : Alexey PETROV
 ##
 
 
 #--------------------------------------------------------------------------------------
-source /usr/local/share/confFlu/bashrc
+confflu_path=""
+
+if test "x${CONFFLU_ROOT_DIR}" != "x"; then
+   confflu_path=${CONFFLU_ROOT_DIR}
+fi
+
+if test "x${confflu_path}" = x && test -f /usr/local/share/confFlu/build_configure; then
+   confflu_path=/usr/local/share/confFlu
+fi
+
+if test "${confflu_path}x" = "x"; then
+   echo "ERROR:confFlu need to be installed or sourced"
+   exit 0
+fi
+
+${confflu_path}/build_configure
 
 
-#---------------------------------------------------------------------------
-which_open_foam="1.6"
-
-#source_openfoam /home/andrey/OpenFOAM/OpenFOAM-1.6/etc/bashrc
-
-source_openfoam /opt/openfoam171/etc/bashrc
-
-source_salome /home/andrey/salome_5.1.4/env_products.sh
-
-
-#---------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------
