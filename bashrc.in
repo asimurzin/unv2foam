@@ -25,6 +25,7 @@ if test "${UNV2FOAM_ROOT_DIR}x" = "x" ; then
    echo UNV2FOAM_ROOT_DIR=\"${UNV2FOAM_ROOT_DIR}\"
 
    export PATH=${UNV2FOAM_ROOT_DIR}/bin:${PATH}
+   export PYTHONPATH=${UNV2FOAM_ROOT_DIR}:${PYTHONPATH}
    export LD_LIBRARY_PATH=${UNV2FOAM_ROOT_DIR}/lib:${LD_LIBRARY_PATH}
 
    source ${UNV2FOAM_ROOT_DIR}/env.sh
