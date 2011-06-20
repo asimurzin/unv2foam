@@ -1,0 +1,78 @@
+## Copyright (C) 2010- Alexey Petrov
+## Copyright (C) 2009-2010 Pebble Bed Modular Reactor (Pty) Limited (PBMR)
+## 
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License
+## along with this program.  If not, see <http://www.gnu.org/licenses/>.
+## 
+## See http://sourceforge.net/projects/pythonflu
+##
+## Author : Alexey PETROV
+##
+
+
+#--------------------------------------------------------------------------------------
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+libdir=@libdir@
+includedir=@includedir@
+
+m4dir=@datarootdir@
+
+pythondir=@PYTHONDIR@
+
+All:
+	@./Allwmake
+	@(cd @abs_top_builddir@/unv2foam && make )
+
+clean:
+	@./wcleanAll
+	@(cd @abs_top_builddir@/unv2foam && make clean)
+
+
+
+#--------------------------------------------------------------------------------------
+install:
+	@ rm -rf $(pythondir)/unv2foam $(bindir)/unv2foam $(libdir)/libunv2foam.so $(includedir)/unv2foam $(m4dir)/unv2foam/admin
+	@ echo "install @abs_top_builddir@/bin/unv2foam --> $(bindir)/unv2foam"
+	@ install -d $(bindir) $(libdir) $(pythondir) $(includedir)/unv2foam $(m4dir)/unv2foam/admin
+	@ cp -rf @abs_top_builddir@/bin/unv2foam $(bindir)/
+	@ echo "install @abs_top_builddir@/lib/libunv2foam.so --> $(libdir)/"
+	@ cp -rf @abs_top_builddir@/lib/libunv2foam.so $(libdir)/
+	@ echo "install @abs_top_builddir@/lib/*.H --> $(includedir)/unv2foam/"
+	@ cp -rf @abs_top_builddir@/lib/*.H $(includedir)/unv2foam/
+	@ echo "install @abs_top_builddir@/unv2foam --> $(pythondir)/"
+	@ cp -rf @abs_top_builddir@/unv2foam $(pythondir)/
+	@ (cd $(pythondir)/unv2foam && find \( -name "*.d" -o -name "pyfoam" -o -name "*.exe" -o -name "*.cc" \) -delete)
+	@ (cd $(pythondir)/unv2foam && find \( -name "*.h" -o -name "*_" -o -name "*.o" -o -name "*.in" -o -name "Makefile" -o -name "*.pyc" \) -delete)
+	@ echo "cp -rf @abs_top_builddir@/admin/unv2foam_check_unv2foam.m4 --> $(m4dir)/unv2foam/admin/"
+	@ cp -rf @abs_top_builddir@/admin/unv2foam_check_unv2foam.m4 $(m4dir)/unv2foam/admin/
+	@ ldconfig
+
+develop:
+	@ rm -rf $(pythondir)/unv2foam $(bindir)/unv2foam $(libdir)/libunv2foam.so $(includedir)/unv2foam $(m4dir)/unv2foam/admin
+	@ install -d $(bindir) $(libdir) $(pythondir) $(includedir) $(m4dir)/unv2foam/admin
+	@ echo "ln -s @abs_top_builddir@/bin/unv2foam --> $(bindir)/unv2foam"
+	@ ln -s @abs_top_builddir@/bin/unv2foam $(bindir)/unv2foam
+	@ echo "ln -s @abs_top_builddir@/lib/libunv2foam.so --> $(libdir)/libunv2foam.so"
+	@ ln -s @abs_top_builddir@/lib/libunv2foam.so $(libdir)/libunv2foam.so
+	@ echo "ln -s @abs_top_builddir@/lib --> $(includedir)/unv2foam"
+	@ ln -s @abs_top_builddir@/lib $(includedir)/unv2foam
+	@ echo "ln -s @abs_top_builddir@/unv2foam --> $(pythondir)/unv2foam"
+	@ ln -s @abs_top_builddir@/unv2foam $(pythondir)/unv2foam
+	@ echo "ln -s @abs_top_builddir@/admin/unv2foam_check_unv2foam.m4 --> $(m4dir)/unv2foam/admin/"
+	@ ln -s @abs_top_builddir@/admin/unv2foam_check_unv2foam.m4 $(m4dir)/unv2foam/admin/unv2foam_check_unv2foam.m4
+	@ ldconfig
+
+
+#--------------------------------------------------------------------------------------
