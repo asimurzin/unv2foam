@@ -20,6 +20,6 @@
 ##
 
 #---------------------------------------------------------------------------
-import unv2foam
+from unv2foam import *
 
-unv2foam=unv2foam.unv2foam
+

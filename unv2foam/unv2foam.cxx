@@ -29,9 +29,11 @@
   #include "unv2foam.hh"
 %}
 
-%import <src/finiteVolume/fvMesh/fvMeshes.cxx>
+%import <Foam/src/finiteVolume/fvMesh/fvMeshes.cxx>
 
 %include "create_fvMesh.H"
+
+%rename ( engine ) Foam::unv2foam;
 
 %include "unv2foam.H"
 
