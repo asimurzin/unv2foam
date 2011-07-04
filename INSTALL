@@ -30,11 +30,11 @@ It advances the referenced OpenFOAM "ideasUnvToFoam" utility in two main terms:
  - introduces embedded capabilties (its functionality can be called as usual C++ function)
  - makes this functionality available for different versions of OpenFOAM
 
-* Install OpenFOAM (tested with versions 1.4.1-dev, 1.5 or 1.6)
+* Install OpenFOAM (tested with versions 1.4.1-dev, 1.5, 1.6 and 1.7.1)
   Please follow instructions from corresponding INSTALL file to setup OpenFOAM
   on your computer.
 
-* Make sure that confFlu  is installed
+* Make sure that confFlu  is installed (tested with release 1.2-hybrid)
   Please follow instructions from corresponding INSTALL file to setup confFlu
   in your environment.
 
