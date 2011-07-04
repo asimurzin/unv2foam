@@ -75,6 +75,9 @@ In order to build the module you have to perform the following actions:
 
   (use "./wcleanAll" command to cleanup the build folder)
 
+6. Install unv2foam
+
+   make install
 
 #--------------------------------------------------------------------------------------
 "unv2foam" utility environment

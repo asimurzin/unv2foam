@@ -25,6 +25,14 @@
 ##
 ## ------------------------------------------------------------------------------
 
+2011-07-04 Alexey PETROV  <alexey.petrov.nnov@gmail.com>
+
+    * To include wrapping of C++ functionality
+
+    * To provide installation procedure
+
+    * Adjusting to the "changed configuration system" (confFlu package)
+
 2009-04-15 Alexey PETROV <Alexey.Petrov@pbmr.co.za>
 
     * The first stable release

@@ -20,7 +20,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 See See https://csrcs.pbmr.co.za/svn/nea/prototypes/reaktor/unv2foam
 
 ---------------------------------------------------------------------------
+New Features and Important Changes, r0.4 vs r0.3
 
+Author(s) :  Alexey PETROV
+
+2011-07-04
+
+* To include wrapping of C++ functionality
+
+* To provide installation procedure
+
+* Adjusting to the "changed configuration system" (confFlu package)
+
+
+---------------------------------------------------------------------------
 New Features and Important Changes, r0.3 vs r0.2
 
 Author(s) :  Alexey PETROV
