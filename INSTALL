@@ -31,12 +31,16 @@ It advances the referenced OpenFOAM "ideasUnvToFoam" utility in two main terms:
  - makes this functionality available for different versions of OpenFOAM
 
 * Install OpenFOAM (tested with versions 1.4.1-dev, 1.5 or 1.6)
-Please follow instructions from corresponding INSTALL file to setup OpenFOAM
-on your computer.
+  Please follow instructions from corresponding INSTALL file to setup OpenFOAM
+  on your computer.
 
-* Install conffoam (common purpose configuration utility) 
-Please follow instructions from corresponding INSTALL file to setup OpenFOAM
-on your computer.
+* Make sure that confFlu  is installed
+  Please follow instructions from corresponding INSTALL file to setup confFlu
+  in your environment.
+
+* Make sure that pythonFlu is installed (tested with release 8.2-hybrid)
+  Please follow instructions from corresponding INSTALL file to setup pythonFlu
+  in your environment.
 
 Then follow below instructions in order to build the "unv2foam" utilitity.
 
