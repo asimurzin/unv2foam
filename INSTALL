@@ -82,7 +82,7 @@ In order to build the module you have to perform the following actions:
 
 6. Install unv2foam
 
-   make install
+   sudo make install
 
 #--------------------------------------------------------------------------------------
 "unv2foam" utility environment
