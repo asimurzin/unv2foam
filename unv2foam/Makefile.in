@@ -30,6 +30,8 @@ unv2foam_cppflags=-I@abs_top_builddir@/lib/lnInclude
 
 __CPPFLAGS__ := $(__CPPFLAGS__) \
 	-I$(WM_PROJECT_DIR)/src/finiteVolume/lnInclude \
+	@MANAGEDFLU_OPENFOAM_CPPFLAGS@ \
+	@MANAGEDFLU_FINITEVOLUME_CPPFLAGS@ \
 	${unv2foam_cppflags}
 
 __CXXFLAGS__ := $(__CXXFLAGS__)
@@ -38,6 +40,8 @@ unv2foam_ldflags=-L@abs_top_builddir@/lib -lunv2foam
 
 __LDFLAGS__ := $(__LDFLAGS__) \
 	-L$(WM_PROJECT_DIR)/lib/$(WM_OPTIONS) -lfiniteVolume \
+	@MANAGEDFLU_OPENFOAM_LIB@ \
+	@MANAGEDFLU_FINITEVOLUME_LIB@ \
 	${unv2foam_ldflags}
 	
 sources = \
