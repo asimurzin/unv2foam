@@ -862,7 +862,8 @@ Foam::fvMeshPtr Foam::unv2foam( const fileName& ideasName, const Time& runTime )
 	(
 	    polyMesh::defaultRegion,
 	    runTime.constant(),
-	    runTime
+	    runTime,
+	    IOobject::MUST_READ
 	),
 	polyPoints,
 	cellVerts,

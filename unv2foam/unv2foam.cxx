@@ -29,7 +29,7 @@
   #include "unv2foam.hh"
 %}
 
-%import <Foam/src/finiteVolume/fvMesh/fvMeshes.cxx>
+%import <Foam/src/OpenFOAM/fields/tmp/autoPtr_fvMesh.cxx>
 
 %include "create_fvMesh.H"
 

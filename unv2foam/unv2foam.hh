@@ -25,7 +25,7 @@
 
 
 //---------------------------------------------------------------------------
-#include "Foam/src/finiteVolume/fvMesh/fvMeshes.hh"
+#include "Foam/src/OpenFOAM/fields/tmp/autoPtr_fvMesh.hh"
 
 #include "create_fvMesh.H"
 

@@ -43,7 +43,23 @@ using namespace Foam;
 
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+dictionary createControlDict()
+{
+  // creating dummy controlDict for correct initialisation autoPtr<fileMonitor> in runTime
+  dictionary a_controlDict;
+  a_controlDict.add( word( "startFrom" ), word( "startTime" ) );
+  a_controlDict.add( word( "startTime" ), 0.0 );
 
+  a_controlDict.add( word( "stopAt" ), word( "endTime" ) );
+  a_controlDict.add( word( "endTime" ), 0.0 );
+
+  a_controlDict.add( word( "deltaT" ), 0.0 );
+  a_controlDict.add( word( "writeControl" ), word( "timeStep" ) );
+
+  a_controlDict.add( word( "writeInterval" ), 1 );
+  
+  return a_controlDict;
+}
 // Main program:
 
 int main(int argc, char *argv[])
@@ -58,8 +74,10 @@ int main(int argc, char *argv[])
     // the creation of the Time object is expanded into different way
     Foam::Info<< "Create time\n" << Foam::endl;
 
+    dictionary a_controlDict = createControlDict();
     Foam::Time runTime
     (
+        a_controlDict,
         args.rootPath(),
         args.caseName()
     );
